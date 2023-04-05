@@ -1,4 +1,4 @@
-var tileSize = 15.625
+var tileSize = 18.75
 var world = []
 var worldWidth
 var worldHeight
@@ -8,7 +8,7 @@ var targetY;
 function setup() {
   bg = loadImage('noun634.png');
   
-let canvas = createCanvas(500, 500);
+let canvas = createCanvas(600, 600);
  canvas.parent('sketch-container');
   
   noStroke();
@@ -28,10 +28,10 @@ let canvas = createCanvas(500, 500);
   console.log(world)
   
    input = createInput();
-  input.position(0, 500);
+  input.position(0, 600);
 
   button = createButton('submit');
-  button.position(input.x + input.width, 500);
+  button.position(input.x + input.width, 600);
   button.mousePressed(greet);
 
   greeting = createElement('h2');
@@ -52,7 +52,8 @@ function greet() {
 function draw(){
   targetX = int(mouseX / tileSize)
   targetY = int(mouseY / tileSize)
-    background(bg)
+    image(bg,0,0,600,600)
+  
   if ((targetX == 4 && targetY ==5)||
       (targetX == 5 && targetY ==5)||
       (targetX == 5 && targetY ==6)||
